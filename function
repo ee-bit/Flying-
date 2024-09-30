@@ -1,0 +1,74 @@
+
+
+1. console.log()
+
+Descrição: Exibe uma mensagem no console. Usado para depuração e monitoramento.
+
+Uso:
+
+console.log("Olá, Mundo!");
+
+
+
+2. setTimeout()
+
+Descrição: Executa uma função após um determinado período (em milissegundos).
+
+Uso:
+
+setTimeout(() => {
+    console.log("Esta mensagem aparecerá após 2 segundos.");
+}, 2000);
+
+
+
+3. Promise
+
+Descrição: Representa um valor que pode estar disponível agora, ou no futuro, ou nunca. Usado para gerenciar operações assíncronas.
+
+Uso:
+
+const minhaPromessa = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("Operação concluída!");
+    }, 1000);
+});
+
+minhaPromessa.then((resultado) => {
+    console.log(resultado);
+});
+
+
+
+4. fs.readFile() (do módulo fs do Node.js)
+
+Descrição: Lê o conteúdo de um arquivo de forma assíncrona.
+
+Uso:
+
+const fs = require('fs');
+
+fs.readFile('meuarquivo.txt', 'utf8', (erro, dados) => {
+    if (erro) {
+        console.error("Erro ao ler o arquivo:", erro);
+        return;
+    }
+    console.log(dados);
+});
+
+
+
+5. http.createServer() (do módulo http do Node.js)
+
+Descrição: Cria um servidor HTTP que pode processar requisições e enviar respostas.
+
+Uso:
+
+const http = require('http');
+
+const servidor = http.createServer((req, res) => {
+    res.statusCode = 200;
+
+
+
+
