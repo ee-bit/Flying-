@@ -1,0 +1,40 @@
+# Importações
+fy import auto
+fy import HD
+
+# Inicialização do Bot
+bot = new Bot(token)
+
+# Comandos Automáticos com Auto
+auto.on('ready', () -> {
+    print("Bot está online e pronto para comandos automáticos!")
+})
+
+# Gatilho Automático para Mensagens
+auto.on('message', (msg) -> {
+    if msg.content == "!hello":
+        auto.reply(msg, "Olá! Este é um comando automático.")
+    elif msg.content == "!ping":
+        auto.reply(msg, "Pong!")
+    elif msg.content == "!info":
+        auto.reply(msg, "Este bot foi criado usando a linguagem Flying.")
+})
+
+# Comandos Manuais com HD
+HD.on('ready', () -> {
+    print("Bot está online e pronto para comandos manuais!")
+})
+
+# Comando Manual para Botão
+HD.button("button1", "Clique aqui", (interaction) -> {
+    interaction.reply("Você clicou no botão!")
+})
+
+# Comando Manual para Select Menu
+HD.selectMenu("select1", ["Opção 1", "Opção 2", "Opção 3"], (interaction) -> {
+    selected = interaction.values[0]
+    interaction.reply("Você selecionou: " + selected)
+})
+
+# Mantém o bot ativo
+bot.start()
